@@ -1,0 +1,19 @@
+.tasklist_head{
+    display: grid;
+    width: 100%;
+    min-height: 400px;    
+    grid-template-rows: auto;
+    grid-template-columns: 70%;
+    justify-content: end;
+    padding-top: 3rem;
+}
+.tasklist_display{
+    width: 70%;
+}
+
+.tasklist_display h3{
+    font-weight: 600;
+}
+.profile :hover{
+    color: blue;
+}

@@ -1,0 +1,52 @@
+import logo from .home_head {
+  display: grid;
+  grid-template-rows: auto;
+  width: 100%;
+}
+.banner {
+  display: grid;
+  grid-template-rows: 80vh;
+  width: 100%;
+  background-image: url("https://e0.pxfuel.com/wallpapers/513/580/desktop-wallpaper-personal-growth-and-coaching.jpg");
+  background-size: 100% 100%;
+  background-position: center;
+  color: aliceblue;
+  justify-content: center;
+  align-items: end;
+}
+
+.banner h2 {
+  font-weight: 700;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 100px;
+  grid-template-columns: 60%;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_display {
+  display: flex;
+  grid-template-rows: 200px;
+  justify-content: space-around;
+}
+.boxes {
+  width: 30%;
+  height: 10 vh;
+  background-color: darkgray;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  align-items: center;
+}
+.link {
+  text-decoration: none;
+  color: aliceblue;
+}
+.boxes :hover {
+  color: blue;
+}
