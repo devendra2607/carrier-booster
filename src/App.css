@@ -38,38 +38,3 @@
 }
 
 /* -------task-display---------- */
-.timmer {
-  font-weight: 700;
-  font-size: larger;
-  color: rgb(247, 244, 244);
-  background-color: #282c34;
-  width: 20%;
-}
-
-.result{
-  display: grid;
-  width: 50%;
-  row-gap: 20px;
-  justify-content: center;
-  align-items: top;
- 
-  grid-template-rows: auto;
-  grid-template-columns:70% ;
-  grid-template-columns:70% ;
-  grid-template-columns:70% ;
-}
-.result form{
-  position: relative;
-  top:0px;
-
-}
-
-.result h6{
-  font-weight: 600;
-}
-.block p{
-  font-weight: 600;
-  text-align: start;
-  font-size: larger;
-}
-

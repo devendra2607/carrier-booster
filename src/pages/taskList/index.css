@@ -1,19 +1,24 @@
-.tasklist_head{
-    display: grid;
-    width: 100%;
-    min-height: 400px;    
-    grid-template-rows: auto;
-    grid-template-columns: 70%;
-    justify-content: end;
-    padding-top: 3rem;
-}
-.tasklist_display{
-    width: 70%;
+.tasklist_head {
+  display: grid;
+  width: 100%;
+  min-height: 100vh;
+  grid-template-rows: auto;
+  grid-template-columns: 70%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(108, 65, 65, 0.8));
 }
 
-.tasklist_display h3{
-    font-weight: 600;
+.tasklist_display {
+  width: 100%;
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  color: rgb(231, 233, 235);
 }
-.profile :hover{
-    color: blue;
+
+.tasklist_display h3 {
+  font-weight: 600;
+}
+.user_profile :hover {
+  color: blue;
 }

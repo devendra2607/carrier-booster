@@ -7,8 +7,6 @@ import Task from '../pages/task'
 import Payment from '../pages/payments'
 import Profile from '../pages/profile'
 
-
-
 export default function AllRoutes() {
   return (
     <Routes>

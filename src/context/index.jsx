@@ -6,21 +6,25 @@ export const AuthContext = createContext();
 export default function Auth({ children }) {
   const [login, setLogin] = useState(true);
   const navigate = useNavigate();
-  const { search } = useLocation();
+  const { search, pathname } = useLocation();
   const name = new URLSearchParams(search).get("name");
 
   const checkAuth = async () => {
-    if (login  && name === "login") {
+    const token = await localStorage.getItem("token");
+    if (token) {
+      setLogin(login);
+    }
+    if (login && name === "login") {
       navigate("/tasklist");
-    } else if (!login && name !== "singup") {
+    } else if (!login && name !== "singup" && pathname !== "/") {
       navigate("/auth?name=login");
     }
   };
 
   useEffect(() => {
     checkAuth();
-  }, [login]);
-  
+  }, []);
+
   return (
     <AuthContext.Provider value={{ login, setLogin }}>
       {children}

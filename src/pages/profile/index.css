@@ -1,0 +1,16 @@
+.profile {
+  display: grid;
+  grid-template-rows: auto;
+  justify-content: center;
+  padding-top: 5rem;
+  min-height: 100vh;
+  grid-template-columns: 80%;
+}
+
+.profile_display {
+  display: grid;
+  grid-template-rows: auto;
+  min-height: 50vh;
+  grid-template-columns: 33% 33% 33%;
+  background: linear-gradient(rgba(90, 92, 155, 0.8), rgba(108, 65, 65, 0.8));
+}

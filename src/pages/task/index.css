@@ -1,11 +1,72 @@
-.task_head{
-    display: grid;
-    width: 100%;
-    grid-template-rows: auto;
-    grid-template-columns: 80%;
-    justify-content: center;
+.task_head {
+  display: grid;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-columns: 80%;
+
+  justify-content: center;
+  background: linear-gradient(rgba(90, 92, 155, 0.8), rgba(108, 65, 65, 0.8));
 }
-.task_display{
-   width:100%;
-   height: 100vh;    
+.task_display {
+  width: 100%;
+  height: 100vh;
+}
+.heading {
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  color: aliceblue;
+}
+.timmer {
+  font-weight: 700;
+  font-size: larger;
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  color: aliceblue;
+  width: 20%;
+}
+.notice {
+  display: flex;
+  align-items: center;
+}
+.btn {
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  color: rgb(231, 233, 235);
+  font-size: larger;
+}
+
+.task_menu {
+  display: flex;
+  padding-top: 2rem;
+}
+
+.task_menu_child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  color: aliceblue;
+  height: 15%;
+}
+
+.result {
+  display: grid;
+  width: 50%;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: top;
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  grid-template-rows: auto;
+  grid-template-columns: 70%;
+}
+.result form {
+  position: relative;
+  top: 0px;
+}
+
+.result h6 {
+  font-weight: 600;
+}
+.block p {
+  font-weight: 600;
+  text-align: start;
+  font-size: larger;
 }

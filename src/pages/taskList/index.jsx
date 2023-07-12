@@ -25,28 +25,32 @@ function TaskList() {
   }, []);
 
   return (
-    <div className="tasklist_head border">
-      <Stack direction="row" spacing={2} className="p-2 profile">
+    <div className="tasklist_head ">
+      <Stack direction="row" spacing={2} className="p-2 user_profile">
         <Link to={"/profile"} className="text-decoration-none">
-          <Avatar alt="PROFILE" src="/static/images/avatar/1.jpg" />
+          <Avatar
+            sx={{ width: "3rem", height: "3rem" }}
+            alt="PROFILE"
+            src="/static/images/avatar/1.jpg"
+          />
         </Link>
       </Stack>
-      <div className="border tasklist_display p-1 ">
+      <div className=" tasklist_display p-2 ">
         <Typography variant="h3">Task List</Typography>
-        <div className="d-flex  flex-column  align-items-center row-gap-4 mt-5">
+        <div className="d-flex flex-column  align-items-center row-gap-4 mt-5">
           {data.map((val) => {
             return (
-              <div className="tasklist_display text-start  shadow-lg p-2 ">
-                <h2>{val.task_name}</h2>
+              <div className="text-start bg-light text-dark rounded shadow-lg p-2 ">
+                <h1>{val.task_name}</h1>
                 <div className="d-flex gap-3">
                   <h6 className="text-uppercase">
                     ENTRY FEES :-₹{val.entry_fees}
                   </h6>
-                  <h6 className="text-uppercase">
-                    WINNING PRICE :-₹{val.winning_price}
+                  <h6 className="text-uppercase text-success">
+                    WINNING PRICE :- <span>₹{val.winning_price}</span>
                   </h6>
                   <Link to={`/payment?id=${val._id}`}>
-                    <button className="btn btn-success">Join</button>
+                    <button className="btn ">Join</button>
                   </Link>
                 </div>
               </div>

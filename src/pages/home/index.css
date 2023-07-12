@@ -5,48 +5,117 @@ import logo from .home_head {
 }
 .banner {
   display: grid;
-  grid-template-rows: 80vh;
+  grid-template-rows: 100vh;
   width: 100%;
-  background-image: url("https://e0.pxfuel.com/wallpapers/513/580/desktop-wallpaper-personal-growth-and-coaching.jpg");
+  background-image: linear-gradient(
+      rgba(40, 43, 112, 0.8),
+      rgba(125, 1, 0, 0.8)
+    ),
+    url("https://e0.pxfuel.com/wallpapers/513/580/desktop-wallpaper-personal-growth-and-coaching.jpg");
   background-size: 100% 100%;
   background-position: center;
   color: aliceblue;
   justify-content: center;
-  align-items: end;
+  /* align-items: end; */
 }
-
+.verticle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .banner h2 {
   font-weight: 700;
 }
 
-.container {
-  display: grid;
-  grid-template-rows: 100px;
-  grid-template-columns: 60%;
-  justify-content: center;
-  align-items: center;
-}
-
 .home_display {
-  display: flex;
+  display: grid;
   grid-template-rows: 200px;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
 }
 .boxes {
-  width: 30%;
-  height: 10 vh;
-  background-color: darkgray;
-  justify-content: center;
-  align-items: center;
-  color: aliceblue;
-  border-radius: 0.8rem;
+  width: 300px;
   cursor: pointer;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 35vh;
 }
-.link {
+.home_display a {
   text-decoration: none;
-  color: aliceblue;
+  color: #000 !important;
 }
-.boxes :hover {
-  color: blue;
+
+.home_display h3 {
+  font-weight: bold;
+}
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #00838d;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+.card1 {
+  display: block;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 262px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #00838d;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(21);
+  }
+}
+
+.card1:hover {
+  p {
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  h3 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
+  }
+  a {
+    color: #fff !important;
+  }
 }
