@@ -12,9 +12,10 @@ export default function Auth({ children }) {
   const checkAuth = async () => {
     const token = await localStorage.getItem("token");
     if (token) {
-      setLogin(login);
+      setLogin(true);
     }
-    if (login && name === "login") {
+
+    if (login && (name === "login" || name === "singup")) {
       navigate("/tasklist");
     } else if (!login && name !== "singup" && pathname !== "/") {
       navigate("/auth?name=login");
@@ -23,7 +24,7 @@ export default function Auth({ children }) {
 
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [pathname]);
 
   return (
     <AuthContext.Provider value={{ login, setLogin }}>

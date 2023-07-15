@@ -3,22 +3,63 @@
   width: 100%;
   min-height: 100vh;
   grid-template-rows: auto;
-  grid-template-columns: 70%;
+  grid-template-columns: 100%;
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
-  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(108, 65, 65, 0.8));
+  background-image: linear-gradient(
+    rgba(40, 43, 112, 0.8),
+    rgba(125, 1, 0, 0.8)
+  );
+  /* url("https://e0.pxfuel.com/wallpapers/513/580/desktop-wallpaper-personal-growth-and-coaching.jpg"); */
 }
 
 .tasklist_display {
   width: 100%;
-  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(125, 1, 0, 0.8));
+  background: linear-gradient(rgba(40, 43, 112, 0.8), rgba(45, 7, 7, 0.8));
   color: rgb(231, 233, 235);
 }
 
 .tasklist_display h3 {
   font-weight: 600;
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
 }
 .user_profile :hover {
   color: blue;
+}
+.tasklist_task_view {
+  display: grid;
+  grid-template-rows: 200px;
+  grid-template-columns: 40% 50%;
+  width: 90%;
+  min-height: 200px;
+  align-items: center;
+  padding-left: 8px;
+  border-radius: 4px;
+  background-color: hsl(240deg 28.81% 11.57%);
+}
+
+.tasklist_task_view_img {
+  display: flex;
+  width: 90%;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.tasklist_task_view_des h1 {
+  color: white;
+  text-shadow: 4px 4px 8px #3c19a5;
+}
+
+@media screen and (max-width: 512px) {
+  .tasklist_task_view {
+    display: flex;
+    flex-direction: column;
+  }
+  .tasklist_task_view_img {
+    width: 80%;
+    justify-content: center;
+    padding-top: 8px;
+  }
 }

@@ -21,26 +21,26 @@ const singupSchema = yup.object().shape({
     .string()
     .matches(/^[A-Za-z ]*$/, "Please enter valid name")
     .max(20)
-    .required("A Name is required"),
-  emailId: yup.string().email().required("A email is required"),
+    .required("Name is required"),
+  emailId: yup.string().email().required("Email is Required"),
   mobile: yup
     .number()
     .typeError("That doesn't look like a phone number")
-    .positive("A phone number can't start with a minus")
-    .integer("A phone number can't include a decimal point")
+    .positive("Phone Number can't start with a minus")
+    .integer("Phone Number can't include a decimal point")
     .min(10)
-    .required("A phone number is required"),
+    .required("Phone Number is required"),
   password: yup
     .string()
-    .required("A Password is required")
+    .required("Password is required")
     .min(8, "Password must have at least 8 characters"),
 });
 
 const logSchema = yup.object().shape({
-  emailId: yup.string().email().required(),
+  emailId: yup.string().email().required("Email is Required"),
   password: yup
     .string()
-    .required("A Password is required")
+    .required("Password is Required")
     .min(8, "Password must have at least 8 characters"),
 });
 
@@ -67,11 +67,15 @@ export default function Auth() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container
+      component="main"
+      maxWidth="xs"
+      className="card verticle-center card-container"
+    >
       <CssBaseline />
       <Box
         sx={{
-          marginTop: 8,
+          padding: "8px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -81,14 +85,14 @@ export default function Auth() {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          {name === "login" ? "Log In" : "Sign In"}
+          {name === "login" ? "Log In" : "Register"}
         </Typography>
 
         <Box
           component="form"
           onSubmit={handleSubmit(handleClick)}
           noValidate
-          sx={{ mt: 1 }}
+          sx={{ mt: 0 }}
         >
           {name === "login" ? (
             <div>
@@ -176,24 +180,22 @@ export default function Auth() {
               />
             </div>
           )}
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
-          />
           <Button
             type="submit"
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
           >
-            {name === "login" ? "Log In" : "Sign In"}
+            {name === "login" ? "Log In" : "Register"}
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
+          <Grid container direction={"column"}>
+            {name === "login" && (
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Forgot password?
+                </Link>
+              </Grid>
+            )}
             <Grid item>
               {name === "login" ? (
                 <Link href={"/auth?name=singup"} variant="body2">
@@ -201,7 +203,7 @@ export default function Auth() {
                 </Link>
               ) : (
                 <Link href={"/auth?name=login"} variant="body2">
-                  {" Log In"}
+                  {"Already a User? Log In"}
                 </Link>
               )}
             </Grid>

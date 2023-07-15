@@ -45,6 +45,7 @@ export default function Task() {
     handleSubmit,
     register,
     control,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -53,11 +54,11 @@ export default function Task() {
   const [second, SetSecond] = useState(0);
 
   const submit = (value) => {
-    console.log("value", value);
     const task_zip = value.task_zip[0];
     const screen_shot = value.screen_shot[0];
-
-    setData([...data, { task_zip, screen_shot }]);
+    const users = value.users.map((user) => user[0]);
+    setData([...data, { task_zip, screen_shot, users }]);
+    reset();
   };
 
   const getData = async () => {
@@ -162,8 +163,8 @@ const AddScerrnShots = ({ register, control }) => {
               type="file"
               placeholder="Screen shots"
               className="form-control"
-              name={`users[${index}].screen_shot`}
-              {...register(`users[${index}].screen_shot`)}
+              name={`users[${index}]`}
+              {...register(`users[${index}]`)}
               defaultValue={val.screen_shot}
             />
             <button
@@ -177,7 +178,7 @@ const AddScerrnShots = ({ register, control }) => {
         <button
           className="btn text-light "
           type="button"
-          onClick={() => append({ screen_shot: "" })}
+          onClick={() => append()}
         >
           Add Screen Shots
         </button>
